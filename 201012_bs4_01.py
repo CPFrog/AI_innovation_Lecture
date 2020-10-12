@@ -22,3 +22,20 @@ print(p1)
 #%% 실습 2-1 링크 정보 가져오기
 link_txt=soup.find('a')
 print(link_txt.text)
+
+#%% a 태그로 연결된 전체정보 가져오기
+link_all=soup.find_all('a')
+print(link_all)
+
+for i in link_all:
+    print(i)
+
+#%% 실습 3-1 : p태그 전체정보 가져오고 text 출력해보기
+p_all=soup.find_all('p')
+
+for i in p_all:
+    print(i)
+    
+#%% 심화 3-1 : href 정보 가져오기
+for i in link_all:
+    print(i.attrs['href'])
