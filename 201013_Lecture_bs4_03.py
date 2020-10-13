@@ -23,4 +23,19 @@ url1 = "https://movie.naver.com/movie/point/af/list.nhn?st=mcode&sword=171725&ta
 page = urlopen(url1)
 soup = BeautifulSoup(page, "html.parser")
 comment_all = soup.find_all('td', class_='title')
-print(comment_all.text)
+print(comment_all)
+#%% 갯수 확인
+print(len(comment_all))
+#%%
+print(comment_all[0])
+#%%
+ch_td=list(comment_all[5].children)
+print(ch_td[6].strip())
+#%% 댓글 여러개 가져오기
+comments = []
+for comment in comment_all:
+    temp=list(comment.children)
+    result=temp[6].strip()
+    comments.append(result)
+    
+print(comments)

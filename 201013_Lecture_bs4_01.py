@@ -24,29 +24,3 @@ soup_s=BeautifulSoup(page_samsung, 'html.parser')
 div_now=soup_s.find('div', class_='today')
 now=div_now.find('span',class_='blind').text
 print(now)
-
-#%% 심심하니까 하는거
-
-import time
-url_bs='http://g.bns.plaync.com/ingame/bs/character/profile?c='
-char_name=input('캐릭터명 : ')
-page_bs=urlopen(str(url_bs)+str(char_name))
-soup_bs=BeautifulSoup(page_bs, 'html.parser')
-
-time.sleep(1)
-atk=soup_bs.find('span', id='total-int_attack_power_value').text
-boss_atk=soup_bs.find('span', id='total-boss_attack_power_value').text
-acc=soup_bs.find('span', id='total-int_attack_hit_value').text
-acc_rate=soup_bs.find('span', id='total-attack_hit_rate').text
-crt_rate=soup_bs.find('span', id='total-attack_critical_rate').text
-crt_dam=soup_bs.find('span', id='total-attack_critical_damage_value').text
-attr=soup_bs.find('span', id='total-attack_attribute_value').text
-
-print('공격력 :', atk)
-print('항마공 :', boss_atk)
-print('명중 :', acc)
-print('명중률 :', acc_rate)
-print('치명타율 :', crt_rate)
-print('치명피해 :', crt_dam)
-print('공력 :', attr)
-print('치피공합 :', int(crt_dam)+int(attr))
