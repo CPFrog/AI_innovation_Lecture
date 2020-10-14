@@ -1,14 +1,17 @@
-from requests import get
 from urllib.parse import quote_plus
+from selenium import webdriver
 from bs4 import BeautifulSoup
-import time
+
 headers={'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36 Edg/86.0.622.38'}
 url_bs='http://g.bns.plaync.com/ingame/bs/character/profile?c='
 char_name=quote_plus(input('캐릭터명 : '))
-page_bs=get(url_bs+char_name, headers=headers).text
+driver=webdriver.Edge(r'.\Day 14_201014\msedgedriver')
+options.add_argument('headless')
+options.add_argument('disable-gpu')
+driver=webdriver.Edge('msedgedriver')
+page_bs=driver.get(url_bs+char_name)
 soup_bs=BeautifulSoup(page_bs, 'html.parser')
 
-time.sleep(1)
 atk=soup_bs.find('span', id='total-int_attack_power_value').text
 boss_atk=soup_bs.find('span', id='total-boss_attack_power_value').text
 acc=soup_bs.find('span', id='total-int_attack_hit_value').text
