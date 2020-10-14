@@ -66,3 +66,8 @@ dict_val = (
     '전체 :', all_word[5],
 )
 # %%
+import pandas as pd
+dat=pd.DataFrame(dict_val)
+# %%
+dat.to_csv('datalab.csv', index=True)
+# %%
