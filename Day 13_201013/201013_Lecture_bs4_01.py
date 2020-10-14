@@ -1,5 +1,7 @@
 #%% 실습 1 : 코스피지수(거래량, 거래대금, 장중최고, 장중최저)
 
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
 url_n='https://finance.naver.com/sise/sise_index.nhn?code=KOSPI'
 page_n=urlopen(url_n)
 soup_n=BeautifulSoup(page_n, 'html.parser')
