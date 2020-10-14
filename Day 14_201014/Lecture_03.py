@@ -62,3 +62,10 @@ dat = {"해외지수":all_stock, "지수":all_stock_price}
 pop_stock = pd.DataFrame(dat)
 pop_stock
 # %%
+dat1 = pd.read_excel("stock.xlsx", sheet_name="Top10")
+writer = pd.ExcelWriter("stock.xlsx", engine='xlsxwriter')
+
+dat1.to_excel(writer, sheet_name="Top10", index=False)
+pop_stock.to_excel(writer, sheet_name="해외지수", index=False)
+
+writer.save()  # 엑셀 파일 저장

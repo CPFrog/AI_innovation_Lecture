@@ -5,10 +5,11 @@ from bs4 import BeautifulSoup
 headers={'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36 Edg/86.0.622.38'}
 url_bs='http://g.bns.plaync.com/ingame/bs/character/profile?c='
 char_name=quote_plus(input('캐릭터명 : '))
-driver=webdriver.Edge(r'.\Day 14_201014\msedgedriver')
+driver=webdriver.Chrome('chromedriver')
+
+options=webdriver.ChromeOptions()
 options.add_argument('headless')
 options.add_argument('disable-gpu')
-driver=webdriver.Edge('msedgedriver')
 page_bs=driver.get(url_bs+char_name)
 soup_bs=BeautifulSoup(page_bs, 'html.parser')
 
