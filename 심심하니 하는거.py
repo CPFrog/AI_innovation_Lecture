@@ -13,7 +13,7 @@ options.add_argument('disable-gpu')
 
 #%% 캐릭정보 불러오기
 driver=webdriver.Chrome('chromedriver', options=options)
-char_name=input('캐릭터명 : ')
+char_name=input('캐릭터명 :')
 
 cn=quote_plus(char_name)
 driver.get(url_bs + cn)
