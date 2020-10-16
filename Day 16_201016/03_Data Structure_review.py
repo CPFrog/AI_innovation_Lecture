@@ -107,3 +107,9 @@ team_df.loc[:,['toto','gildong']]
 # 3번째 행까지 값을 보고 싶다
 team_df.iloc[:3,:]
 
+"""### 데이터프레임 요약
+* team_df.describe()
+"""
+
+team_df
+
