@@ -58,7 +58,3 @@ def plot_feature_imp_cancer(model):
   plt.xlabel('특성중요도')
   plt.ylabel('특성')
   plt.ylim(-1,n_features)
-
-# %%
-plot_feature_imp_cancer(tree)
-# %%
